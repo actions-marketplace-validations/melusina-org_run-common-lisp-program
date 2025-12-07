@@ -34,7 +34,7 @@ runs:
     - name: 'Run a Common Lisp Program'
       shell: sh
       run: |
-        ${{ github.action_path }}/with_lisp_implementation ${{ inputs.implementation }} <<EOF
+        ${GITHUB_ACTION_PATH}/with_lisp_implementation ${{ inputs.implementation }} <<EOF
         (ql:quickload '#:${{ inputs.system }})
         (${{ inputs.system }}:${{ inputs.entrypoint }})
         EOF
